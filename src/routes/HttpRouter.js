@@ -1,5 +1,6 @@
 import express from 'express';
 import { PacketInspector } from '../models/PacketInspector.js';
+import { DescribeRequest } from '../models/DescribeRequest.js';
 
 export const router = express.Router();
 
@@ -8,7 +9,7 @@ router.get('/getAbout', (req, res) => {
     res.json({ message: 'Success', data: req.query });
 });
 
-router.get('/getPacketInspector', PacketInspector.getPacket, (req, res) => {
+router.get('/getPacketInspector', PacketInspector.getPacket, DescribeRequest.describeRequestHeader, (req, res) => {
     // console.log(req);
     // console.log(res);
     // console.log('testse');

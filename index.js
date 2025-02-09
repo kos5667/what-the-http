@@ -26,6 +26,10 @@ app.use(express.static(path.join(__dirname, 'public')));
 //         console.log('📡 패킷 캡처됨:', packet);
 // });
 
+function loadOptions () {
+}
+loadOptions();
+
 // 기본 루트 라우트
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'index.html'));

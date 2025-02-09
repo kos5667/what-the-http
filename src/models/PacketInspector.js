@@ -24,8 +24,8 @@ export class PacketInspector {
     static getPacket(req, res, next) {
         // 네트워크 인터페이스 정보 조회
         const networkInterfaces = os.networkInterfaces();
-        // console.log(networkInterfaces);
         console.info('IP Packet ------------------------------')
+        // console.log(networkInterfaces);
         // console.log(req);
         console.info('----------------------------------------')
         next();
