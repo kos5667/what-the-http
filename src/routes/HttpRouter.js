@@ -8,3 +8,11 @@ router.get('/getAbout', (req, res) => {
     res.json({ message: 'Success', data: req.query });
 });
 
+router.get('/getPacketInspector', PacketInspector.getPacket, (req, res) => {
+    // console.log(req);
+    // console.log(res);
+    // console.log('testse');
+    console.log('in..')
+    res.send({ message: 'Packet Inspector Route' });
+})
+

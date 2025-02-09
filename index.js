@@ -1,6 +1,7 @@
 import express from 'express';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import pcap from 'pcap';
 
 import { router } from './src/routes/HttpRouter.js';
 
@@ -15,6 +16,15 @@ app.use(router);
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 app.use(express.static(path.join(__dirname, 'public')));
+
+// 네트워크 인터페이스에서 IP 패킷 감지 (eth0는 네트워크 인터페이스 이름)
+const pcapSession = pcap.createSession('en0', 'ip');
+// 패킷 캡처 이벤트 리스너
+pcapSession.on('packet', (rawPacket) => {
+    const packet = pcap.decode.packet(rawPacket);
+    if (packet.link_type !== 'LINKTYPE_ETHERNET')
+        console.log('📡 패킷 캡처됨:', packet);
+});
 
 // 기본 루트 라우트
 app.get('/', (req, res) => {
