@@ -1,8 +1,7 @@
 const express = require('express');
 const path = require('path');
 
-const { HttpRouter } = require('./src/routes/HttpRouter')
-const router = new HttpRouter().router();
+const router= require('./src/routes/HttpRouter');
 
 const app = express();
 const PORT = 3000;

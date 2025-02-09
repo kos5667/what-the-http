@@ -6,7 +6,7 @@
     "node": ">=20.14.0"
   },
   "main": "index.js",
-  "sncripts": {
+  "scripts": {
     "start": "node index.js",
     "dev": "nodemon index.js"
   },
