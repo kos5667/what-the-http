@@ -2,14 +2,21 @@
   "name": "what-the-http",
   "version": "1.0.0",
   "description": "HTTP를 깊게 뜯어보기 위한 저장소",
+  "engines": {
+    "node": ">=20.14.0"
+  },
   "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "sncripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js"
   },
   "keywords": [],
-  "author": "",
+  "author": "kos5667@gmail.com",
   "license": "ISC",
   "dependencies": {
     "express": "^4.21.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.9"
   }
 }
